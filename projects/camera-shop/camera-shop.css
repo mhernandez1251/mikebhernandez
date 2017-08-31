@@ -1,0 +1,1876 @@
+/******************************************
+GENERAL
+******************************************/
+
+@font-face {
+  font-family: Baron;
+  src: url('../../fonts/Baron_Neue_Black.otf');
+}
+
+@font-face {
+  font-family: Spartan;
+  src: url('../../fonts/LeagueSpartan-Bold.otf');
+}
+
+@font-face {
+  font-family: Dense-Regular;
+  src: url('../../fonts/Dense-Regular.otf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: Dense-Regular, helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.active {
+  text-decoration: underline !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hidden-nav {
+  display: none !important;
+}
+
+.close {
+  color: #EAEDED;
+  position: absolute;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0 0 10px;
+}
+
+#failedLogin {
+  font-size: 4rem;
+}
+
+.page-title {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.page-body {
+  width: 90%;
+  min-height: 60vh;
+  margin:auto;
+  padding-top: 90px;
+}
+
+
+
+/******************************************
+COLOR
+******************************************/
+
+header {
+  background-color: rgba(255, 255, 255, .8);
+}
+
+#nav-list {
+  background-color: rgba(255, 255, 255, .8);
+}
+
+#searchbar {
+  background-color: rgba(0, 0, 0, .6);
+}
+
+#search-field {
+  color: #fff;
+}
+
+#button-container button[name*="Sign"] {
+  color: #fff;
+  background-color: #000;
+}
+
+#button-container button[name*="Login"] {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+#form-overlay,
+#catalog-buy-overlay {
+  background: rgba(0, 0, 0, .8);
+}
+
+#form-container form {
+  background-color: rgba(255,255,255,.9);
+}
+
+#form-container h3,
+#form-container label {
+  color: #000;
+}
+
+#form-container button[type*="submit"] {
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,.8);
+}
+
+.form-close {
+  background-color: #515A5A;
+}
+
+#splash-page h1 {
+  color: #fff;
+}
+
+#signup-error-message {
+	color: #fff;
+	background-color: #000;
+}
+
+input {
+  background-color: #fff;
+}
+
+.error-login {
+  color: #fff;
+}
+
+.overlay-option-container a:hover,
+.hover-buy:hover {
+  color: #A6ACAF;
+}
+
+
+
+/******************************************
+HEADER
+******************************************/
+
+header {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  z-index: 100;
+}
+
+#nav-container {
+  width: 94%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-column {
+  margin: auto;
+}
+
+
+/************* LOGO *************/
+
+#logo-container {
+  font-family: Baron, Spartan, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#logo {
+  padding: 0 6px 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+#logo a {
+  padding: 0 6px 10px;
+  border-radius: 5px;
+}
+
+
+/************* MAIN-NAV *************/
+
+#main-nav {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-logo {
+  margin: auto;
+  margin-bottom: 3px;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.collapse-logo {
+  margin: auto;
+  padding: 3px 5px;
+  border-radius: 8px;
+}
+
+#nav-list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-list li {
+  padding: 3px;
+  margin-bottom: 3px;
+}
+
+#nav-list li a {
+  padding: 3px;
+  font-size: .7rem;
+}
+
+
+/************* BUTTONS *************/
+
+#button-container {
+  display: flex;
+  width: 25%;
+  align-items: stretch;
+  text-align: center;
+  position: relative;
+}
+
+#cart-icon {
+  margin: auto 0;
+  cursor: pointer;
+  padding: 0 5px 0 3px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+#user-icon {
+  margin: auto 5px;
+  cursor: pointer;
+  padding: 0 5px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+#sign-in-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#button-container button {
+  border: none;
+  font-family: Dense-Regular, helvetica, sans-serif;
+  font-size: .7rem;
+  margin-bottom: 2px;
+  padding: 2px 0 2px;
+  width: 42px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/************* SEARCHBAR *************/
+
+#searchbar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#search-field {
+  width: 95%;
+  font-family: Dense-Regular, helvetica, sans-serif;
+  font-size: 3rem;
+  border: none;
+  background: none;
+  padding: 8px;
+}
+
+#search-field:focus {
+  outline: none;
+}
+
+#searchbar .close {
+  right: 8px;
+  top: 5px;
+}
+
+
+/******************************************
+LOGIN/SIGN UP FORM
+******************************************/
+
+#form-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  display: none;
+}
+
+#form-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  align-self: center;
+  display: flex;
+}
+
+#form-container h3 {
+  text-align: center;
+  margin: 2px 0 8px;
+  padding-top: 5px;
+}
+
+#form-container form {
+  width: 60vw;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 12px;
+  border-radius: 8px;
+  position: relative;
+  margin: auto;
+}
+
+#form-container form input {
+  font-family: Dense-Regular, helvetica, sans-serif;
+  font-size: .9rem;
+  width: 100%;
+  height: 26px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  padding-left: 2px;
+  border: 1px solid #000;
+  flex: 1;
+}
+
+#form-container label {
+  font-size: .9rem;
+}
+
+#login-container,
+#account-login {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-container label,
+#account-login label {
+  margin-bottom: 3px;
+}
+
+#login-container input,
+#account-login input {
+  border: 1px solid #000;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+
+.form-close {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  color: #fff;
+  padding: 4px;
+  border-radius: 100%;
+}
+
+#name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#password-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button-container {
+  width: 100%;
+  margin: 5px;
+  text-align: center;
+}
+
+.form-button-container button {
+  font-family: Dense-Regular, helvetica, sans-serif;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background: none;
+  margin: 0 2px;
+}
+
+
+
+/******************************************
+SECTION
+******************************************/
+
+section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.section-container {
+  width: 94%;
+  margin: auto;
+}
+
+
+/***************** SPLASH PAGE *****************/
+
+#splash-page {
+  height: 42vh;
+  background: url('../../img/camera-shop/camera-background.jpg') no-repeat center;
+  background-size: cover;
+  margin-top: 65px;
+  display: flex;
+}
+
+#splash-page h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin: auto;
+}
+
+
+/***************** MAIN BODY *****************/
+
+#main-body {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.main-body-section {
+  margin: 15px 0;
+  position: relative;
+}
+
+.main-body-section img {
+  margin-top: 4px;
+  width: 100%;
+}
+
+.main-body-section-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.main-body-section-overlay h3 {
+  font-size: 2rem;
+  text-align: center;
+  color: #ECF0F1;
+  flex: 1;
+  margin: auto;
+}
+
+.overlay-option-container {
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  flex: 1;
+  margin: auto;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+}
+
+.price {
+  color: #ECF0F1;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  flex: 2;
+  margin: auto;
+}
+
+.overlay-option-container a,
+.hover-buy {
+  text-decoration: underline;
+  margin: 0;
+  margin-right: 5px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ECF0F1;
+  font-size: 1.25rem;
+}
+
+#full-catalog {
+  clear: both;
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/******************************************
+FOOTER
+******************************************/
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#site-info {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.footer-item {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item li {
+  padding: 3px;
+  margin: 2px 0;
+}
+
+.footer-item h5 {
+  margin: 0;
+  font-size: 1.17rem;
+}
+
+#shop-options {
+  display: none;
+}
+
+#account-options {
+  display: none;
+}
+
+#support-options {
+  padding-left: 30px;
+}
+
+#company-options {
+  padding-right: 20px;
+}
+
+#contact-options {
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+  padding-bottom: 25px;
+}
+
+#footer-logo {
+  font-family: Baron, Spartan;
+  font-size: 2.5rem;
+  margin: 3px;
+}
+
+#contact-us {
+  margin: 2px 0;
+  font-size: 1.5rem;
+}
+
+.phoneNumber {
+  margin: 2px 0 4px;
+  font-size: 1rem;
+}
+
+#social-media-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -15px;
+}
+
+#social-media-list li {
+  margin-left: 10px;
+  background-color: #000;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+#social-media-list li a i {
+  color: #fff;
+}
+
+.fa-twitter {
+  padding: 8px 6px;
+}
+
+.fa-facebook {
+  padding: 8px 10px;
+}
+
+.fa-instagram {
+  padding: 8px;
+}
+
+.fa-tumblr {
+  padding: 8px 10px;
+}
+
+.fa-youtube-play {
+  padding: 8px 6px;
+}
+
+.copyright {
+  fonts-size: .8rem;
+}
+
+
+/******************************************
+CATALOG PAGE
+******************************************/
+
+#catalog-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-buy-overlay {
+  display: none;
+}
+
+.item-buy-label {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.item-buy-price {
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.buy-overlay-options {
+  display: flex;
+  justify-content: center;
+}
+
+.buy-overlay-options a {
+  margin-right: 5px;
+  font-size: .8rem;
+  color: #000;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0 3px;
+  cursor: pointer;
+}
+
+.quantity-label {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.quantity-container {
+  text-align: center;
+  line-height: .95;
+  margin-top: -5px;
+}
+
+.item-quantity {
+  border-radius: 3px;
+}
+
+.success-overlay {
+  display: none;
+}
+
+.success-overlay p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#no-items-message {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+
+/******************************************
+ITEM PAGE
+******************************************/
+
+.item-wrapper {
+  width: 100%;
+}
+
+.item-wrapper img {
+  width: 70%;
+  margin-left: 15%;
+  border: 2px solid rgba(0, 0, 0, .2);
+}
+
+.item-cat {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+#pagination {
+  text-align: center;
+  font-size: 1rem;
+  font-style: bold;
+  margin-top: 10px;
+}
+
+#pagination a {
+  font-size: 1rem;
+  font-style: bold;
+  padding: 0 8px;
+}
+
+#pagination p {
+  margin: 0;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+#item-page-buy-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#item-page-buy-options .item-buy-price,
+#item-page-buy-options .quantity-container {
+  width: 50%;
+  margin: auto;
+}
+
+#item-page-buy-options .item-buy-price {
+  text-align: right;
+  padding-right: 10px;
+}
+
+#item-page-buy-options .quantity-container {
+  text-align: left;
+  padding-left: 10px;
+}
+
+#item-page-buy-options .buy-overlay-options {
+  flex: 1;
+}
+
+#item-page-buy-options p,
+#item-page-buy-options div {
+  color: #000;
+}
+
+#item-page-buy {
+  border: 2px solid #000;
+}
+
+#item-description {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.spec-section-title {
+  font-size: 2rem;
+  text-decoration: underline;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#item-specs {
+  list-style: none;
+  padding: 0;
+}
+
+.spec-label {
+  margin: 0;
+}
+
+.spec-info {
+  margin: 0 0 5px;
+}
+
+
+
+/******************************************
+USER PAGE
+******************************************/
+
+#user-section {
+  padding-top: 90px;
+  min-height: 60vh;
+}
+
+#signup-error-message {
+  max-width: 60%;
+  margin: 8px auto 0;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: .9rem;
+}
+
+#account-signup span {
+  display: block;
+}
+
+#account-signup label {
+  font-size: .8rem;
+}
+
+#account-signup #name-container {
+  display: block;
+}
+
+#account-signup #password-container {
+  display: block;
+}
+
+#user-section #form-container form {
+	margin: 0 auto;
+}
+
+#account-order-history {
+  padding-left: 18px;
+}
+
+.order-number {
+  text-decoration: underline;
+}
+
+/************** SUCCESSFUL LOGIN **************/
+
+#success-container {
+  width: 80%;
+  min-height: 50vh;
+  margin: auto;
+}
+
+#success-container-lists {
+  width: 100%;
+}
+
+#success-container-lists li {
+  flex: 1;
+  font-size: .8rem;
+}
+
+#success-container-lists li ul {
+  font-size: 1.25rem;
+}
+
+#success-container form {
+  width: 100%;
+  display: flex;
+}
+
+#account-action-buttons {
+  width: 100%;
+  display: flex;
+}
+
+#account-logout,
+#account-delete,
+.delete-account-button {
+  display: inline-block;
+  margin:auto;
+  padding: 2px 5px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  background-color: #fff;
+  font-family: Dense-Regular;
+  font-size: 1.5rem;
+}
+
+#account-logout {
+  margin-right: 15px;
+}
+
+#account-delete {
+  margin-left: 15px;
+}
+
+#delete-account-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.4);
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+#delete-account-message {
+  width: 225px;
+  height: 140px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#delete-account-message p {
+  font-size: 1.5rem;
+  margin: 10px auto 5px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+#delete-account-buttons-container {
+  width: 100%;
+  margin: 10px auto 5px;
+  padding: 0 5px;
+  display: flex;
+}
+
+
+
+/******************************************
+CART PAGE
+******************************************/
+
+#cart-page{
+  display:block;
+  position: relative;
+}
+
+#cart-body {
+  border: 2px solid black;
+  width: inherit;
+  margin: auto;
+}
+
+#cart-table {
+    width: 100%;
+    padding: 10px;
+    font-size: .75rem;
+}
+
+#cart-table tr {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+#cart-table td {
+  font-size: 1rem;
+}
+
+#cart-table .item-quantity {
+  font-size: .75rem;
+}
+
+.quantity-data {
+  display: inline-flex;
+}
+
+.delete-item {
+  font-size: .75rem;
+  margin-left: 4px;
+}
+
+.empty-cart {
+  text-align: center;
+  font-size: 2.75rem;
+  margin-bottom: 20px;
+}
+
+#totals {
+  width: 90%;
+  margin: auto;
+  padding: 0 8px;
+  font-size: 1rem;
+  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#totals span {
+  display: inline !important;
+}
+
+#checkout-info {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#clear-cart,
+#checkout,
+#update-quantity {
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 0 3px;
+  font-size: .75rem;
+}
+
+
+
+/******************************************
+CHECKOUT PAGE
+******************************************/
+
+#checkout-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkout-page h2 {
+  font-size: 1.25rem;
+}
+
+#checkout-page h2 span {
+  padding: 0 3px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.checkout-select {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.checkout-signup {
+  display: none;
+}
+
+hr {
+  width: 100%;
+  margin: 5px 0;
+}
+
+#complete-order {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 1px 3px;
+  background: #000;
+  color: #fff;
+  width: 80px;
+  align-self: flex-end;
+  font-family: Dense-regular;
+}
+
+#successful-order-message {
+  text-align: center;
+  font-size: 2rem;
+  min-height: 25vh;
+}
+
+#payment-information {
+  width: 80%;
+  margin: 20px 10%;
+  background-color: #E5E7E9;
+  padding: 20px;
+}
+
+#payment-information span {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+#payment-information span input {
+  border: 1px solid #909497;
+  border-radius: 5px;
+}
+
+#payment-information h4 {
+  text-align: center;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+#payment-error-message {
+  background-color: #707B7C;
+  color: #E5E7E9;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#expiration-date-container select {
+  font-family: Dense;
+  font-size: 1.125rem;
+}
+
+
+
+/******************************************
+SITEMAP PAGE
+******************************************/
+
+#site-info-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.sitemap-margin {
+  margin-left: 20px;
+}
+
+
+
+/******************************************
+MEDIA QUERIES
+******************************************/
+
+@media screen and (min-width: 480px) {
+  /************* OVERLAY *************/
+  #cart-icon {
+    margin: auto 0 auto auto;
+  }
+  #sign-in-buttons {
+    margin: auto;
+  }
+  #signup-container span,
+  #account-signup span {
+    display: flex;
+    margin-top: 5px;
+  }
+  #signup-container label,
+  #login-container label,
+  #account-signup label,
+  #account-login label {
+    margin-right: 3px;
+    font-size: .9rem;
+  }
+  #form-container form input {
+    height: 30px;
+  }
+  #name-container {
+    display: flex;
+    flex-direction: row;
+  }
+  #name-container label {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  #name-container input {
+    flex: 1;
+  }
+  #password-container {
+    display: flex;
+    margin-top: 5px;
+  }
+  #password-container input {
+    flex: 1;
+  }
+  #account-signup span {
+    display: flex;
+  }
+  #account-signup #name-container {
+    display: flex;
+  }
+  #account-signup #password-container {
+    display: flex;
+  }
+  #account-signup label,
+  #account-login label,
+  #account-signup input,
+  #account-login input {
+    font-size: 1rem;
+  }
+
+  #error-message {
+    font-size: 1rem;
+  }
+
+  /************* SECTION *************/
+  .section-container {
+    width: 90%;
+  }
+  #main-body {
+    width: 70%;
+    margin-left: 15%;
+  }
+  #splash-page {
+    height: calc(100vh - 80px);
+    margin-top: 65px;
+  }
+  #splash-page h1 {
+    font-size: 4rem;
+  }
+  .main-body-section-overlay h3 {
+    font-size: 3.5rem;
+  }
+
+  .price {
+    font-size: 3.5rem;
+  }
+  .overlay-option-container {
+    bottom: 15px;
+  }
+  .overlay-option-container a,
+  .hover-buy {
+    font-size: 2.5rem;
+  }
+  #pagination {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  #pagination a {
+    font-size: 1.25rem;
+  }
+
+  .item-buy-label {
+    font-size: 2.75rem;
+  }
+
+  .item-buy-price {
+    font-size: 1.75rem;
+  }
+
+  .buy-overlay-options a {
+    font-size: 1rem;
+  }
+
+  .quantity-label {
+    font-size: 1.25rem;
+  }
+
+  .item-quantity {
+    font-size: 1.25rem;
+  }
+
+  .item-quantity optgroup {
+    font-size: 1rem;
+  }
+
+  /************* FOOTER *************/
+  #shop-options {
+    display: block;
+    margin-left: 15px;
+    padding-left: 10px;
+  }
+  #account-options {
+    display: block;
+    padding-right: 15px;
+  }
+  #support-options {
+    padding-left: 0;
+  }
+  #company-options {
+    padding-right: 10px;
+  }
+  #social-media-list {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+    margin-left: -5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 5rem;
+  }
+  /************* HEADER *************/
+  header {
+    height: 90px;
+  }
+  #logo {
+    font-size: 3.5rem;
+  }
+  #button-container button {
+    font-size: 1.25rem;
+    width: 70px;
+  }
+  #nav-list {
+    padding: 0 60px;
+  }
+  #nav-list li {
+    padding: 7px 2px;
+  }
+  #nav-list li a {
+    font-size: 1.25rem;
+  }
+  #cart-icon {
+    font-size: 1.25rem;
+    padding: 10px 9px 8px 6px;
+    border-radius: 5px;
+  }
+  #sign-in-buttons {
+    margin: auto;
+    margin-left: 10px;
+  }
+  #user-icon {
+    margin: auto;
+    margin-left: 10px;
+    padding: 9px 10px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+  }
+  #search-field {
+    font-size: 3.75rem;
+    margin: auto;
+  }
+  .search-logo {
+    padding: 5px 8px;
+    margin-bottom: 5px;
+  }
+  .collapse-logo {
+    padding: 4px 8px;
+  }
+
+  /************* SIGN IN/ LOGIN *************/
+  #form-container form {
+    width: 42%;
+  }
+  #form-container form input {
+    height: 40px;
+  }
+  #form-container h3 {
+    font-size: 2.5rem;
+  }
+  #signup-container span,
+  #account-signup span {
+    display: block;
+  }
+  #signup-container label,
+  #signup-container input,
+  #login-container label,
+  #login-container input {
+    font-size: 1.5rem;
+  }
+  #form-container button {
+    font-size: 1.5rem;
+  }
+  #account-signup label,
+  #account-login label,
+  #account-signup input,
+  #account-login input {
+    font-size: 1.5rem;
+  }
+  #signup-error-message {
+    font-size: 1.5rem;
+  }
+  #name-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #name-container label {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  #name-container input {
+    flex: 1;
+  }
+  #password-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  #password-container label {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  #password-container input {
+    flex: 1;
+  }
+
+
+
+  /************* ITEM PAGE *************/
+
+  .spec-section-title {
+    font-size: 3.25rem;
+  }
+
+  .spec-label {
+    font-size: 1.75rem;
+  }
+
+
+
+  /************* ACCOUNT *************/
+
+  #delete-account-message {
+    width: 360px;
+    height: 150px;
+  }
+
+  #delete-account-message p {
+    font-size: 2rem;
+  }
+
+  #confirm-account-delete {
+    margin-right: 8px;
+  }
+
+  #cancel-account-delete {
+    margin-left: 8px;
+  }
+
+
+
+  /************* SECTION *************/
+
+  .section-container {
+    width: 90%;
+  }
+
+  #splash-page {
+    height: calc(100vh - 120px);
+    margin-top: 90px;
+  }
+
+  #splash-page h1 {
+    font-size: 6.25rem;
+  }
+
+  .main-body-section-overlay h3 {
+    font-size: 4.75rem;
+    line-height: 0.95;
+  }
+
+  .price {
+    font-size: 4.25rem;
+  }
+
+  .overlay-option-container {
+    bottom: 30px;
+  }
+
+  .overlay-option-container a,
+  .hover-buy {
+    font-size: 2rem;
+  }
+
+  .item-wrapper img {
+    width: 54%;
+    margin-left: 23%;
+  }
+
+  .page-title,
+  .item-cat {
+    font-size: 2.5rem;
+  }
+
+  #pagination {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  #pagination a {
+    font-size: 1.5rem;
+  }
+
+  #full-catalog {
+    font-size: 2.5rem;
+  }
+
+  .item-buy-label {
+    font-size: 5rem;
+    line-height: .95;
+  }
+
+  .item-buy-price {
+    font-size: 2.25rem;
+  }
+
+  .buy-overlay-options a {
+    font-size: 2rem;
+  }
+
+  .quantity-label {
+    font-size: 2rem;
+  }
+
+  .item-quantity {
+    font-size: 1.75rem;
+  }
+
+  .success-overlay p {
+    font-size: 4rem;
+  }
+
+  #success-container-lists li {
+    font-size: 1.25rem;
+  }
+
+  #successful-order-message {
+    font-size: 4rem;
+  }
+
+  #no-items-message {
+    font-size: 3rem;
+    margin-bottom: 70px;
+  }
+
+  #item-description p {
+    font-size: 1.5rem;
+  }
+
+  /************* CART *************/
+
+  #cart-table,
+  #cart-table .item-quantity,
+  #totals,
+  #clear-cart,
+  #checkout,
+  #update-quantity {
+    font-size: 1.5rem;
+  }
+
+  #totals {
+    padding: 0 15px;
+
+  }
+
+  #checkout-info {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+
+  .delete-item {
+    font-size: 1rem;
+    margin-left: 8px;
+  }
+
+  #payment-information {
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+    margin: 60px auto;
+    padding: 30px;
+  }
+
+  #payment-information h4 {
+    font-size: 2rem;
+  }
+
+  #payment-information span {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+
+  #payment-information span label {
+    width: 105px;
+    font-size: 1.25rem;
+    margin: auto;
+  }
+
+  #payment-information span input {
+    width: calc(100% - 105px);
+    border: 1px solid #000;
+    font-size: 1.125rem;
+    padding: 5px;
+  }
+
+  #expiration-date-container {
+    display: flex;
+    width: calc(100% - 105px);
+  }
+
+  #expiration-date-container select {
+    margin-right: 8px;
+    font-size: 1.5rem;
+  }
+
+  #cart-table td {
+    font-size: 1.5rem;
+  }
+
+  #complete-order {
+    width: 130px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+  }
+
+  #payment-error-message {
+    font-size: 1.5rem;
+  }
+
+
+  /************* FOOTER *************/
+  .footer-item h5 {
+    font-size: 2.25rem;
+  }
+  .footer-item li a {
+    font-size: 1.5rem;
+  }
+  #footer-logo {
+    font-size: 3.5rem;
+  }
+  #contact-us {
+    font-size: 2.25rem;
+  }
+  #contact-options p {
+    font-size: 1.5rem;
+  }
+
+
+@media screen and (min-width: 1025px) {
+  h2 {
+    font-size: 7rem;
+  }
+  /************* HEADER *************/
+  header {
+    height: 110px;
+    justify-content: space-between;
+  }
+  .nav-column {
+    margin: 0;
+    flex: 1;
+  }
+  #logo-container {
+    order: -2;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #logo {
+    margin: auto;
+  }
+  #logo a {
+    /*color: #5F4338;*/
+  }
+  #main-nav {
+    padding-left: 55px;
+    order: -1;
+    flex-direction: row;
+    flex: 3;
+    justify-content: space-between;
+  }
+  #nav-list {
+    flex: 4;
+    background-color: rgba(255, 255, 255, 0.0);
+    padding: 10px 0;
+    position: static;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: auto;
+  }
+  #nav-list li {
+    flex: 1;
+    text-align: center;
+  }
+  #nav-list li a {
+    font-size: 2rem;
+  }
+  #main-nav label {
+    margin: auto;
+  }
+  #search-field {
+    font-size: 4rem;
+  }
+  #button-container {
+    align-items: center;
+  }
+  #cart-icon {
+    padding: 8px 8px 8px 6px;
+    margin-left: 50%;
+    margin-right: 8px;
+  }
+  #sign-in-buttons {
+    margin: 0;
+  }
+  .search-logo {
+    padding: 7px 8px;
+    margin: auto;
+    flex: 1;
+  }
+  .collapse-logo {
+    display: none;
+  }
+  .hidden-nav {
+    display: flex !important;
+  }
+  .main-body-section-overlay h3 {
+    font-size: 5.25rem;
+    line-height: 0.95;
+  }
+  .price {
+    font-size: 4.75rem;
+  }
+  #button-container button {
+    font-size: 1.5rem;
+    width: 85px;
+    padding: 4px 3px;
+  }
+  /************* SIGIN UP/LOGIN FORM *************/
+  #name-container,
+  #password-container {
+    flex-direction: column;
+  }
+  #signup-container span,
+  #account-signup span {
+    display: flex;
+	flex-direction: column;
+    margin-top: 5px;
+  }
+  #form-container form input {
+    height: 38px;
+    font-size: 1.125rem;
+  }
+  #account-signup label,
+  #account-login label,
+  #account-signup input,
+  #account-login input {
+    font-size: 1.75rem;
+  }
+  #signup-error-message {
+    min-width: 40%;
+    font-size: 1.5rem;
+  }
+  #success-container-lists p {
+    font-size: 2rem;
+  }
+  #success-container-lists li {
+    font-size: 1.5rem;
+  }
+  /************* SECTION *************/
+
+  .page-body {
+    width: 80%;
+  }
+
+  .page-title,
+  .item-cat {
+    font-size: 4rem;
+    margin-top: 30px;
+  }
+  .section-container {
+    width: 80%;
+  }
+  #splash-page {
+    height: calc(100vh - 130px);
+    margin-top: 110px;
+  }
+  #splash-page h1 {
+    font-size: 11rem;
+  }
+  #main-body {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .main-body-section {
+    width: 48.5%;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  #checkout-page h2 {
+    font-size: 2rem;
+  }
+
+  #main-body .main-body-section:nth-child(2n) {
+    margin-right: 3%;
+  }
+
+  #pagination {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #pagination a {
+    font-size: 2rem;
+  }
+
+  /************* CATALOG *************/
+
+  #catalog-section .main-body-section:nth-child(2n + 1) {
+      margin-right: 3%;
+  }
+
+  .item-buy-label {
+    font-size: 4.5rem;
+  }
+  .item-buy-price {
+    font-size: 2.5rem;
+  }
+
+  .quantity-label {
+    font-size: 1.5rem;
+  }
+
+  .item-quantity {
+    font-size: 1.25rem;
+    margin-right: 4px;
+  }
+
+  .item-quantity optgroup {
+    font-size: 1rem;
+  }
+
+
+  /************* FOOTER *************/
+  .footer-item h5 {
+    font-size: 2.75rem;
+  }
+  .footer-item li a {
+    font-size: 1.5rem;
+  }
+  #contact-us {
+    font-size: 2.25rem;
+  }
+  #footer-logo {
+    font-size: 4rem;
+  }
+  #contact-options p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  /************* SECTION *************/
+  .section-container {
+    width: 94%;
+  }
+  #splash-page {
+    height: 45vh;
+  }
+  footer {
+    margin-top: 15px;
+  }
+}

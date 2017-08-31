@@ -1,0 +1,1643 @@
+/*******************************************************
+GENERAL
+*******************************************************/
+
+@font-face {
+  font-family: Bravery;
+  src: url('../../fonts/Bravery.ttf');
+}
+
+@font-face {
+  font-family: arctic;
+  src: url('../../fonts/Arctic.otf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Arimo', sans-serif;
+}
+
+input {
+  font-family: 'Arimo', sans-serif;
+}
+
+a {
+  font-family: 'Arimo', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.scroll-hidden {
+  display: none;
+}
+
+.title {
+  font-family: arctic;
+}
+
+#favorites-list-container {
+  width: 100%;
+  margin-top: 3.6vw;
+}
+
+.cookbook-recipe-text {
+  color: rgba(229,231,233,.8);
+  margin: auto;
+  padding: 8px 8px 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.cookbook-recipe-text:hover {
+  color: rgba(255,255,255,.9);
+  text-shadow: 1px 0 1px rgba(0,0,0,.2),
+  0 1px 1px rgba(0,0,0,.2),
+  -1px 1px 1px rgba(0,0,0,.2),
+  1px -1px 1px rgba(0,0,0,.2);
+}
+
+.cookbook-recipe-subtext {
+  width: 100%;
+  color: rgba(229,231,233,.8);
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  font-size: 7px;
+}
+
+
+
+
+
+/*******************************************************
+HEADER
+*******************************************************/
+
+header {
+  width: 100%;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  z-index: 101;
+  background-color: rgba(0,0,0,0);
+}
+
+#header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fixed-header {
+  display: flex;
+  position: relative;
+}
+
+.header-item {
+  margin: auto;
+}
+
+#header-menu {
+  margin: auto 6px;
+  cursor: pointer;
+}
+
+#header-menu-dropdown {
+  position: absolute;
+  top: 33px;
+  left: 4px;
+  background-color: rgba(255,255,255,.5);
+  border: 2px solid rgba(0,0,0,.2);
+  border-radius: 4px;
+  padding: 2px 5px;
+  z-index: 1;
+}
+
+#header-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#header-menu-list li a {
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+.header-list-item {
+  margin: auto;
+}
+
+.point {
+  width: 0;
+  height: 0;
+  border-left: 8px solid rgba(0,0,0,0);
+  border-right: 8px solid rgba(0,0,0,0);
+  border-bottom: 8px solid rgba(0,0,0,.2);
+  position: absolute;
+}
+
+#header-menu-dropdown-point {
+  top: -10px;
+  left: 1px;
+}
+
+#header-title {
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+#header-account,
+#add-recipe {
+  display: flex;
+  width: 66px;
+  height: 22px;
+  border-radius: 4px;
+  margin: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#account-icon {
+  color: #fff;
+  margin: auto;
+  margin-right: 2px;
+  margin-left: 4px;
+  font-size: .75rem;
+}
+
+#account-text {
+  color: #fff;
+  margin: auto;
+  margin-right: 4px;
+  font-size: .75rem;
+}
+
+#header-account-dropdown {
+  position: absolute;
+  padding: 4px;
+  padding-bottom: 0;
+  top: 33px;
+  right: 6px;
+  background-color: rgba(255,255,255,.5);
+  border: 2px solid rgba(0,0,0,.2);
+  border-radius: 4px;
+  color: #fff;
+  z-index: 1;
+}
+
+#header-account-dropdown-point {
+  top: -9px;
+  left: 25px;
+  color: #fff;
+}
+
+.header-account-signin {
+  font-size: .75rem;
+  text-align: center;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  padding: 2px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+.scroll-header{
+  display: none;
+}
+
+#search-container {
+  position: absolute;
+  width: 80vw;
+  top: 21vh;
+  left: 10vw;
+  margin: auto;
+}
+
+#searchfield {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  top: 3px;
+}
+
+#searchfield input {
+  width: calc(100% - 24px);
+  height: 24px;
+  background: rgba(0,0,0,0);
+  border: none;
+  padding-right: 3px;
+  padding-left: 6px;
+}
+
+#searchfield input:focus {
+  outline: none;
+}
+
+#searchfield button {
+  font-size: .75rem;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(0,0,0,0);
+  border: none;
+}
+
+#header-search-submit {
+  margin: auto;
+}
+
+#add-recipe {
+  margin: auto;
+  margin-right: 20px;
+}
+
+#add-recipe a {
+  color: #000;
+  text-decoration: none;
+  font-size: .75rem;
+  margin: auto;
+}
+
+
+
+/*******************************************************
+FOOTER
+*******************************************************/
+
+footer {
+  width: 100%;
+  height: 120px;
+  clear: both;
+  position: absolute;
+  bottom: -120px;
+}
+
+#footer-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-item {
+  margin: 5px auto 10px;
+}
+
+#footer-title {
+  text-align: center;
+}
+
+#footer-title a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+#footer-created {
+  font-size: .75rem;
+}
+
+#footer-social {
+  display: flex;
+  align-self: center;
+}
+
+#footer-social span {
+  border-radius: 100%;
+  margin-right: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+}
+
+#footer-social a {
+  margin: auto;
+  text-decoration: none;
+}
+
+
+
+
+/*******************************************************
+BANNER
+*******************************************************/
+
+#banner {
+  width: 100%;
+  height: 66.7vw;
+  background: url("../../img/pantree/full-bg.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+}
+
+#banner-title {
+  width: 100%;
+  color: #28B444;
+  font-size: 2.5rem;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  top: 18vw;
+}
+
+
+
+/*******************************************************
+HOMEPAGE
+*******************************************************/
+
+#homepage {
+  width: 100%;
+  height: 100%;
+  background: url("../../img/pantree/homepage-bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#homepage-container {
+  width: 80%;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+#homepage-account {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+#homepage-account-button {
+  color: #fff;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 2px 4px;
+  margin-top: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+#homepage-account-dropdown {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 5px;
+  padding-bottom: 0;
+  position: absolute;
+  top: 43px;
+  right: 14px;
+  background-color: rgba(0,0,0,0);
+}
+
+.homepage-signin {
+  color: #fff;
+  padding: 3px 4px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+#homepage-dropdown-point {
+  width: 0;
+  height: 0;
+  border-left: 8px solid rgba(0,0,0,0);
+  border-right: 8px solid rgba(0,0,0,0);
+  border-bottom: 8px solid rgba(255,255,255,1);
+  position: absolute;
+  top: -8px;
+  right: 20px;
+}
+
+#homepage-title,
+#homepage-subtitle,
+#homepage-links-title {
+  color: #E5E8E8;
+  margin: 0;
+  text-align: center;
+}
+
+.main-title {
+  font-weight: 100;
+}
+
+#homepage-title {
+  font-size: 3.5rem;
+}
+
+#homepage-subtitle {
+  font-size: 2rem;
+}
+
+#homepage-links-container {
+  width: 70%;
+  margin: 20px auto;
+}
+
+#homepage-links-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#homepage-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#homepage-links li {
+  width: 45%;
+  margin: 4px auto;
+}
+
+#homepage-links li a {
+  color: #E5E8E8;
+  padding: 2px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#homepage-search {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+}
+
+#homepage-search input,
+#homepage-search button {
+  background-color: rgba(255,255,255,0);
+  border: none;
+}
+
+#homepage-search input {
+  width: calc(100% - 20px);
+  height: 22px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 0 3px;
+}
+
+#homepage-search input:focus {
+  outline: none;
+}
+
+#homepage-search button {
+  width: 20px;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  right: 2px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#homepage-full-link {
+  text-align: center;
+  text-decoration: none;
+  color: #E5E8E8;
+  font-size: .75rem;
+  margin: auto;
+  margin-top: 15px;
+}
+
+
+
+/*******************************************************
+COOKBOOK PAGE
+*******************************************************/
+
+#cookbook-page {
+  width: 90vw;
+  margin-left: 5%;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#cookbook-list-container {
+  width: 100%;
+}
+
+.cookbook-list {
+  width: 44%;
+  margin: 0;
+  margin-left: 4%;
+  display: inline-block;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+
+.cookbook-recipe-container {
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 3.6vw;
+}
+
+.cookbook-recipe-container a {
+  display: block;
+}
+
+.cookbook-recipe-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cookbook-text-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+}
+
+.favorite {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  font-size: .75rem;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+}
+
+.favorite:hover {
+  background-color: rgba(255,255,255,.2);
+}
+
+.favorite-star-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+}
+
+.star {
+  margin: auto;
+}
+
+.saved {
+  background-color: rgba(255,255,255,.2);
+}
+
+.gold {
+  color: #B87333;
+}
+
+#pagination {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.previous-page a,
+.next-page a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+
+
+/*******************************************************
+RECIPE PAGE
+*******************************************************/
+
+#recipe-page {
+  width: 94%;
+  margin-left: 3%;
+  padding-top: 65px;
+  padding-bottom: 25px;
+}
+
+#recipe-title {
+  font-size: 1.5rem;
+  margin: 8px auto;
+  text-align: center;
+}
+
+#recipe-attribution {
+  text-align: center;
+}
+
+#recipe-attribution span {
+  font-size: .75rem;
+}
+
+#recipe-img {
+  width: 84%;
+  margin: 15px 8%;
+}
+
+#recipe-origin {
+  text-align: center;
+  font-size: .75rem;
+}
+
+#original-link {
+  color: #000;
+}
+
+#recipe-stats {
+  font-size: .75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 18px auto;
+}
+
+#recipe-yield {
+  margin-right: 4px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+.recipe-list {
+  list-style-position: inside;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+
+.recipe-list-item {
+  font-size: .75rem;
+  margin-bottom: 6px;
+}
+
+#recipe-ingredients {
+  border-bottom: 2px solid rgba(0,0,0,.4);
+  margin-bottom: 15px;
+}
+
+#ingredients-list .recipe-list-item span {
+  margin-left: -8px;
+}
+
+#directions-list .recipe-list-item span {
+  margin-left: 4px;
+}
+
+
+
+/*******************************************************
+ADD NEW RECIPE PAGE
+*******************************************************/
+
+#new-recipe-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+}
+
+#new-recipe-error-message,
+#success-message {
+  width: 80%;
+  margin-top: 30px;
+  margin-left: 10%;
+  background: #ccc;
+  padding: 4px;
+}
+
+#new-recipe-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 10%;
+}
+
+#inner-form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#inner-form-container input,
+#time-form-container input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding-left: 6px;
+}
+
+#img_src {
+  padding: 0 !important;
+}
+
+
+#time-form-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#time-form-container span {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#time-form-container span label {
+  width: 80px;
+}
+
+#time-form-container span input {
+  width: 100%;
+}
+
+#prep-time {
+  padding-right: 10px;
+}
+
+#cook-time {
+  padding-left: 10px;
+}
+
+textarea {
+  height: 200px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#time-form-container label {
+  margin-top: 0;
+}
+
+#add-recipe-button {
+  width: 84px;
+  padding: 4px;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px
+}
+
+#upload-image-container {
+  display: flex;
+}
+
+#preview-img {
+  height: 150px;
+  margin-top: 8px;
+}
+
+#special-attribute-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+
+/*******************************************************
+ACCOUNT PAGE
+*******************************************************/
+
+#account-page {
+  width: 90%;
+  min-height: calc(50% - 120px);
+  margin-left: 5%;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#account-title {
+  margin: 45px auto 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#account-error-message {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: #ddd;
+}
+
+#account-form {
+  width: 80%;
+  min-height: calc(100% - 136px);
+  margin-bottom: 0;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.account-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-form-container label {
+  margin-bottom: 4px;
+}
+
+.account-form-container input {
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.4);
+  margin-bottom: 4px;
+  padding: 4px;
+  height: 30px;
+}
+
+#account-form-submit {
+  width: 55px;
+  padding: 2px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#account-logout {
+  width: 85px;
+  color: #000;
+  border-radius: 4px;
+  align-self: center;
+  text-align: center;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+#favorite-title {
+  text-align: center;
+}
+
+#account-favorite-list {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#account-pagination {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#account-pagination a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+
+@media screen and (min-width: 481px) {
+
+  /*******************************************************
+  GENERAL
+  *******************************************************/
+
+  .cookbook-recipe-text {
+    font-size: 1.25rem;
+  }
+
+  .cookbook-recipe-subtext {
+    font-size: .75rem;
+  }
+
+  .favorite {
+    width: 20px;
+    height: 20px;
+  }
+
+
+
+  /*******************************************************
+  HEADER
+  *******************************************************/
+
+  #header-account,
+  #add-recipe {
+    margin-right: 8px;
+  }
+
+  #search-container {
+    width: 64vw;
+    top: 42vh;
+    left: 18vw;
+    margin-top: 0;
+  }
+
+
+
+  /*******************************************************
+  FOOTER
+  *******************************************************/
+
+  footer {
+    height: 50px;
+    bottom: -50px;#
+  }
+
+  #footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer-group {
+    margin: auto;
+  }
+
+
+
+  /*******************************************************
+  BANNER
+  *******************************************************/
+
+  #banner {
+    height: 70%;
+  }
+
+  #banner-title {
+    font-size: 3.25rem;
+    top: 10vw;
+  }
+
+
+
+  /*******************************************************
+  HOMEPAGE
+  *******************************************************/
+
+  #homepage-container {
+    top: calc(50% - 138px);
+  }
+
+  #homepage-title {
+    font-size: 4.5rem;
+  }
+
+  #homepage-links-container {
+    margin: 20px auto 10px;
+  }
+
+  #homepage-links li {
+    width: 25%;
+  }
+
+  #homepage-search {
+    width: 70%;
+    margin: auto;
+  }
+
+
+
+  /*******************************************************
+  COOKBOOK PAGE
+  *******************************************************/
+
+  #cookbook-page {
+    flex-direction: row;
+  }
+
+  .cookbook-list {
+    width: 44%;
+    margin-left: 4%;
+    float: left;
+  }
+
+
+
+  /*******************************************************
+  RECIPE PAGE
+  *******************************************************/
+
+  #recipe-page {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #recipe-stats {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+
+
+  /*******************************************************
+  ACCOUNT PAGE
+  *******************************************************/
+
+  #account-page {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: calc(50% - 50px);
+    padding-bottom: 16px;
+  }
+
+  #account-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+
+
+}
+
+@media  screen and (min-width: 768px) {
+
+  /*******************************************************
+  GENERAL
+  *******************************************************/
+
+  .cookbook-recipe-text {
+    font-size: 2rem;
+  }
+
+  .favorite {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+
+
+  /*******************************************************
+  HEADER
+  *******************************************************/
+
+  header {
+    height: 44px;
+  }
+
+  #header-menu {
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+
+  #header-menu-dropdown {
+    top: 44px;
+    left: 16px;
+  }
+
+  #header-menu-list li {
+    margin: 4px auto;
+  }
+
+  #header-menu-list li a {
+    font-size: 1.125rem;
+  }
+
+  #header-menu-dropdown-point {
+    left: 6px;
+  }
+
+  #header-title {
+    font-size: 2rem;
+  }
+
+  #header-account,
+  #add-recipe {
+    height: 28px;
+    width: 100px;
+    margin-right: 12px;
+  }
+
+  #account-icon,
+  #account-text {
+    font-size: 1.125rem;
+  }
+
+  #account-icon {
+    margin-right: 5px;
+  }
+
+  #account-text {
+    margin-right: 7px;
+  }
+
+  #add-recipe a {
+    font-size: 1.125rem;
+  }
+
+  #header-account-dropdown {
+    width: 108px;
+    top: 44px;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  #header-account-dropdown-point {
+    left: 40px;
+  }
+
+  .header-account-signin {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #search-container {
+    width: 58vw;
+    top: 26vh;
+    left: 21vw;
+    margin-top: 2px;
+  }
+
+  #searchfield input {
+    width: calc(100% - 30px);
+    height: 30px;
+  }
+
+  #searchfield button {
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+
+
+  /*******************************************************
+  FOOTER
+  *******************************************************/
+
+  #footer-title {
+    order: 2;
+  }
+
+  #footer-created {
+    order: 1;
+  }
+
+  #footer-social {
+    order: 3;
+  }
+
+
+
+  /*******************************************************
+  BANNER
+  *******************************************************/
+
+  #banner {
+    height: 55vw;
+  }
+
+  #banner-title {
+    font-size: 6rem;
+    top: 17vw;
+  }
+
+
+
+  /*******************************************************
+  HOMEPAGE
+  *******************************************************/
+
+  #homepage-container {
+    top: calc(50% - 200px);
+  }
+
+  #homepage-account-button {
+    font-size: 1.125rem;
+    padding: 5px 8px;
+  }
+
+  #homepage-account-dropdown {
+    top: 58px;
+    right: 18px;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  #homepage-dropdown-point {
+    border-left: 12px solid rgba(0,0,0,0);
+    border-right: 12px solid rgba(0,0,0,0);
+    border-bottom: 12px solid #fff;
+    top: -13px;
+    right: 28px;
+  }
+
+  .homepage-signin {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+  }
+
+  #homepage-title {
+    font-size: 8rem;
+  }
+
+  #homepage-subtitle {
+    font-size: 3rem;
+  }
+
+  #homepage-links-container {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  #homepage-links-title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  #homepage-links li a {
+    font-size: 1.125rem;
+  }
+
+  #homepage-search {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  #homepage-search input {
+    width: calc(100% - 23px);
+    height: 28px;
+    font-size: 1.25rem;
+  }
+
+  #homepage-search button {
+    right: 6px;
+  }
+
+  #homepage-full-link {
+    font-size: 1rem;
+  }
+
+
+
+  /*******************************************************
+  COOKBOOK PAGE
+  *******************************************************/
+
+  #pagination,
+  .previous-page a,
+  .next-page a {
+    font-size: 1.25rem;
+  }
+
+
+
+  /*******************************************************
+  RECIPE PAGE
+  *******************************************************/
+
+  #recipe-title {
+    font-size: 2.75rem;
+  }
+
+  #recipe-attribution span,
+  #recipe-origin,
+  #recipe-stats,
+  .recipe-list-item {
+    font-size: 1rem;
+  }
+
+  #recipe-img {
+    width: 80%;
+    margin: 15px 10%;
+  }
+
+
+
+  /*******************************************************
+  ACCOUNT PAGE
+  *******************************************************/
+
+  #account-page {
+    padding-bottom: 40px;
+  }
+
+  #account-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+
+
+  /*******************************************************
+  ADD NEW RECIPE PAGE
+  *******************************************************/
+
+  #new-recipe-page {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #new-recipe-error-message,
+  #success-message {
+    font-size: 1.125rem;
+  }
+
+  #inner-form-container label,
+  #special-attribute-container label,
+  #time-form-container label,
+  #new-recipe-form label {
+    font-size: 1.25rem;
+  }
+
+  #inner-form-container input,
+  #time-form-container input {
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  #dish_type {
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  #special-attribute-container span {
+    font-size: 1.125rem;
+  }
+
+  #add-recipe-button {
+    font-size: 1.125rem;
+    width: 115px;
+    padding: 5px;
+  }
+
+
+
+  /*******************************************************
+  ACCOUNT PAGE
+  *******************************************************/
+
+  #account-error-message {
+    font-size: 1.125rem;
+  }
+
+  #account-form {
+    width: 60%;
+    min-height: calc(100% - 135px);
+    margin-left: 20%;
+  }
+
+  #account-title {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .account-form-container label {
+    font-size: 1.25rem;
+  }
+
+  .account-form-container input {
+    font-size: 1.125rem;
+    height: 40px;
+    padding-left: 8px;
+  }
+
+  #account-form-submit {
+    width: 68px;
+    padding: 5px;
+    font-size: 1.125rem;
+  }
+
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  /*******************************************************
+  GENERAL
+  *******************************************************/
+
+  .cookbook-recipe-container {
+    margin-bottom: 2.16vw;
+  }
+
+  .cookbook-recipe-text {
+    font-size: 1.125rem;
+  }
+
+  #favorites-list-container {
+    margin-top: 2.16vw;
+  }
+
+
+
+  /*******************************************************
+  HEADER
+  *******************************************************/
+
+  #header-menu {
+    margin-right: 12px;
+  }
+
+  #search-container {
+    width: 50vw;
+    top: 30vh;
+    left: 25vw;
+  }
+
+  #header-account,
+  #add-recipe {
+    margin-right: 18px;
+  }
+
+  #header-menu-list li a,
+  .header-account-signin {
+    font-size: 1.25rem;
+  }
+
+  #header-account-dropdown {
+    right: 20px;
+  }
+
+
+
+  /*******************************************************
+  FOOTER
+  *******************************************************/
+
+
+
+  /*******************************************************
+  BANNER
+  *******************************************************/
+
+  #banner {
+    height: 50%;
+  }
+
+  #banner-title {
+    top: 5vw;
+  }
+
+
+
+  /*******************************************************
+  HOMEPAGE
+  *******************************************************/
+
+  #homepage-account-button {
+    margin-top: 20px;
+    margin-right: 30px;
+  }
+
+  #homepage-account-dropdown {
+    top: 70px;
+    right: 36px;
+  }
+
+  #homepage-links-container {
+    width: 38%;
+    margin-left: 31%;
+  }
+
+  #homepage-search {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+
+
+  /*******************************************************
+  COOKBOOK PAGE
+  *******************************************************/
+
+  .cookbook-list {
+    width: 22%;
+    margin-left: 2.4%;
+  }
+
+
+
+  /*******************************************************
+  RECIPE PAGE
+  *******************************************************/
+
+  #recipe-img {
+    width: 54%;
+    margin: 15px 23%;
+  }
+
+  #recipe-stats {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+
+  #recipe-lists-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #recipe-ingredients {
+    flex: 1;
+    border-bottom: none;
+  }
+
+  #recipe-directions {
+    border-left: 2px solid #000;
+    flex: 2;
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
+
+
+
+  /*******************************************************
+  ACCOUNT PAGE
+  *******************************************************/
+
+  #account-form {
+    width: 40%;
+    min-height: calc(100% - 130px);
+    margin-top: 0;
+    margin-left: 30%;
+    padding-top: 40px;
+  }
+
+  #account-title {
+    margin: auto auto 20px;
+  }
+
+
+
+  /*******************************************************
+  ADD NEW RECIPE PAGE
+  *******************************************************/
+
+  #new-recipe-page {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  #new-recipe-error-message {
+    font-size: 1.25rem;
+  }
+
+
+
+}
+
+
+@media screen and (min-width: 1025px) {
+
+  .cookbook-recipe-text {
+    font-size: 2rem;
+  }
+
+  .cookbook-recipe-subtext {
+    font-size: 1rem;
+    display: block;
+  }
+
+  .favorite {
+    font-size: 1.125rem;
+    width: 34px;
+    height: 34px;
+    top: 8px;
+    left: 8px;
+  }
+
+}
+
+
+@media screen and (orientation: portrait) {
+
+  /*******************************************************
+  GENERAL
+  *******************************************************/
+
+
+
+}

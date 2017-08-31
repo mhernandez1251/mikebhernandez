@@ -1,0 +1,498 @@
+/**************************************
+GENERAL
+**************************************/
+
+@font-face {
+	 	font-family: About Font;
+		src: url("/fonts/Mission-Script.otf");
+}
+
+@font-face {
+	font-family: Work Font;
+	src: url("/fonts/norwester.otf");
+}
+
+@font-face {
+	font-family: Body Font;
+	src: url("/fonts/Encode.ttf");
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow-x: hidden;
+	font-family: Body Font;
+	background-color: #E7E7E7;
+}
+
+.hidden {
+	display: none !important;
+}
+
+h1,
+h2 {
+	font-family: Work Font;
+	margin: 10px 0;
+}
+
+h1 {
+	text-align: center;
+
+}
+
+h2 {
+	font-size: 1.125rem;
+}
+
+p {
+	margin: 0;
+}
+
+
+
+/**************************************
+HEADER
+**************************************/
+
+header {
+	width: 100vh;
+	position: fixed;
+	text-align: center;
+	transform: rotate(-90deg);
+	transform-origin: 100% 0;
+	top: 0;
+	left: -100vh;
+}
+
+.header-menu-button {
+	border: 1px solid rgba(215,215,215,.7);
+	border-radius: 5px;
+	padding: 3px 5px;
+	margin: 3px 5px;
+}
+
+#header-menu-open {
+	transform: rotate(90deg);
+}
+
+#header-menu-close {
+	color: #EBEBEB;
+	background-color: #333;
+}
+
+.header-nav-link {
+	font-family: Work Font;
+	font-size: 1.125rem;
+	color: #333;
+	display: inline-block;
+	margin-right: -2px;
+	width: 74px;
+	text-align: right;
+}
+
+#header-about {
+	text-align: left;
+}
+
+
+
+/**************************************
+PORTFOLIO HOMEPAGE
+**************************************/
+
+#portfolio-page-container {
+  width: 80%;
+  margin-left: 10%;
+  padding: 20px 0 40px;
+}
+
+#portfolio-title {
+	font-family: Work Font;
+  margin-top: 10px;
+	margin-bottom: 10px;
+  text-align: center;
+	color: #333;
+}
+
+.portfolio-project-section {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.project-section {
+	flex-direction: column;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.project-section:last-child {
+	border-bottom: none;
+}
+
+.portfolio-section-title {
+	width: 100%;
+	font-weight: bold;
+	margin: 10px;
+	text-decoration: underline;
+	font-family: Work Font;
+	color: #333;
+}
+
+.portfolio-section-description {
+	width: 100%;
+	padding: 5px;
+	margin: 0;
+	color: #333;
+}
+
+.project {
+	width: 50%;
+	height: 26.67vw;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	border: 2px solid rgba(10,10,10, 0);
+}
+
+.project:hover {
+	border: 2px solid rgba(10,10,10,.6);
+}
+
+.project-img {
+	width: 100%;
+	height: 100%;
+}
+
+.project-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.4);
+	display: flex;
+	flex-direction: column;
+}
+
+.project-title {
+	margin: 4px;
+	text-align: center;
+  font-family: Work Font;
+	color: #ddd;
+	font-size: .75rem;
+}
+
+.project-button-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.project-button {
+	margin: auto;
+	padding: 2px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 10px;
+	background-color: rgba(0,0,0,0);
+	color: #ddd;
+	text-decoration: none;
+	text-align: center;
+	font-size: 7px;
+}
+
+.project-button:hover {
+	background-color: rgba(221,221,221,.7);
+	color: #333;
+}
+
+.project-details {
+	margin-bottom: 2px;
+}
+
+.project-link {
+	margin-top: 2px;
+}
+
+
+
+/**************************************
+PROJECT
+**************************************/
+
+code {
+	width: 100%;
+	border: 1px solid #222;
+	border-radius: 2px;
+	color: #222;
+	display: inline-block;
+	word-break: break-word;
+	font-size: 10px;
+	margin: 10px 0;
+	padding: 12px;
+}
+
+.indent {
+	width: 100%;
+	display: inline-block;
+	padding-left: 5px;
+}
+
+#project-page {
+	width: 80%;
+	margin-left: 10%;
+	padding-bottom: 40px;
+}
+
+#project-img {
+	width: 80%;
+	margin-left: 10%;
+	border: 1px solid #bbb;
+}
+
+#links-container {
+	width: 100%;
+	display: flex;
+	margin-bottom: 25px;
+}
+
+.full-project-link {
+	display: inline-block;
+	margin: 10px auto;
+	font-weight: 700;
+	color: #fff;
+	background-color: #E57A44;
+	padding: 2px 6px;
+	text-decoration: none;
+}
+
+.link-1 {
+	margin-right: 10px;
+}
+
+.link-2 {
+	margin-left: 10px;
+}
+
+.code-links-container {
+	margin-bottom: 10px;
+}
+
+.code-links-title {
+	margin: 0 0 5px;
+}
+
+.code-links-list {
+	list-style: disc;
+}
+
+.code-link a {
+	color: #222;
+	text-decoration: none;
+}
+
+.code-link a:hover {
+	text-decoration: underline;
+}
+
+.breakdown-list {
+	padding: 0;
+	list-style: none;
+}
+
+.breakdown-list p {
+	font-size: .75rem;
+}
+
+.inline-code-container {
+	display: flex;
+	justify-content: center;
+	font-style: italic;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.inline-code-example {
+	width: inherit;
+	border: 1px solid #000;
+	margin: auto;
+	padding: 8px 5px;
+	overflow: scroll;
+}
+
+#breakdown-title {
+	position: relative;
+}
+
+#version-selection-container {
+	height: 100%;
+	padding: 5px 0;
+}
+
+.version-selection {
+	height: 100%;
+	border: 1px solid #000;
+	cursor: pointer;
+	padding: 0 4px;
+	font-size: 12px;
+}
+
+.version-selected {
+	background-color: #000;
+	color: #fff;
+}
+
+.code-text {
+	border: none !important;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: inherit;
+	font-size: .825rem;
+}
+
+
+
+@media screen and (min-width: 480px) {
+
+	/******** HEADER ********/
+
+	.header-menu-button {
+
+	}
+
+	/******** PROJECT ********/
+
+	#project-page {
+		width: 70%;
+		margin-left: 15%;
+	}
+
+	.project-button {
+		width: inherit;
+		font-size: 9px;
+	}
+
+	.project-details {
+		margin: auto;
+		margin-right: 3px;
+	}
+
+	.project-link {
+		margin: auto;
+		margin-left: 3px;
+	}
+
+	code {
+		font-size: 12px;
+	}
+
+	.breakdown-list p {
+		font-size: 1rem;
+	}
+
+	.inline-code-example {
+		overflow: visible;
+		padding: 12px;
+	}
+
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+	/******** GENERAL ********/
+
+	h1 {
+		font-size: 4rem;
+		margin: 20px 0;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	/******** HEADER ********/
+
+	.header-menu-button,
+	.header-nav-link {
+		font-size: 2rem;
+	}
+
+	.header-menu-button {
+		padding: 6px 9px;
+		margin-top: 10px;
+		margin-right: 15px;
+	}
+
+	.header-nav-link {
+		width: 131px;
+		margin-right: 10px;
+	}
+
+	.project-title {
+		font-size: 1.5rem;
+	}
+
+	.project-button {
+		font-size: 13px;
+	}
+
+	/******** PROJECT ********/
+
+	#project-page {
+		font-size: 1.125rem;
+	}
+
+	#project-img {
+		width: 66%;
+		margin-left: 17%;
+	}
+
+	.version-selection {
+		font-size: 1.125rem;
+	}
+
+	code {
+		width: 75%;
+		margin-left: 12.5%;
+		font-size: 1.125rem;
+	}
+
+	.inline-code-example {
+		font-size: 1.125rem;
+	}
+
+	.indent {
+		padding-left: 15px;
+	}
+
+	.code-text {
+		font-size: 1.25rem;
+	}
+
+
+
+}
+
+@media screen and (min-width: 1025px) {
+
+	.project-title {
+		font-size: 3rem;
+	}
+
+	.project-button {
+		padding: 4px;
+		font-size: 1rem;
+	}
+
+}

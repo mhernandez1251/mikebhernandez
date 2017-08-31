@@ -1,0 +1,325 @@
+@media screen and (min-width: 480px) {
+
+	/**************************************
+	HOMEPAGE
+	**************************************/
+
+	#title-container {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-around;
+		margin: 0 auto;
+		margin-top: 28vh;
+	}
+
+	#homepage-title {
+		font-size: 2.25rem;
+		width: 125px;
+		margin: auto;
+	}
+
+	#homepage-subtitle {
+		font-size: 1.75rem;
+		width: 125px;
+		margin: auto;
+	}
+
+	#button-container {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-top: 0;
+	}
+
+	.homepage-button {
+		padding: 0;
+	}
+
+	.button-span {
+		width: 125px;
+		text-align: center;
+		margin: auto;
+		margin-bottom: 0;
+	}
+
+	/**************************************
+	SECTION: PORTFOLIO
+	**************************************/
+
+	.project {
+		width: 33.33%;
+		height: 17.4vw;
+	}
+
+	.project-title {
+		margin: auto;
+		margin-bottom: 5px;
+	}
+
+	.project-button-container {
+		flex-direction: row;
+		margin: auto;
+		margin-top: 5px;
+	}
+
+	.project-button {
+		width: inherit;
+		font-size: 9px;
+	}
+
+	.project-details {
+		margin: auto;
+		margin-right: 3px;
+	}
+
+	.project-link {
+		margin: auto;
+		margin-left: 3px;
+	}
+
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+	/**************************************
+	GENERAL
+	**************************************/
+
+	.content-title {
+		font-size: 4rem;
+	}
+
+
+
+	/**************************************
+	HOMEPAGE
+	**************************************/
+
+	#homepage-title,
+	#homepage-subtitle,
+	.button-span {
+		width: 335px;
+	}
+
+	#homepage-title {
+		font-size: 3.25rem;
+		margin-right: 125px;
+	}
+
+	#homepage-subtitle {
+		font-size: 2.25rem;
+		margin-left: 125px;
+	}
+
+	.homepage-button {
+		font-size: 2rem;
+	}
+
+
+
+	/**************************************
+	FOOTER
+	**************************************/
+
+	.footer-container  {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.footer-contact-list {
+		margin-left: 20px;
+	}
+
+	.footer-contact-item {
+		font-size: 1.125rem;
+	}
+
+
+
+	/**************************************
+	SECTION: PORTFOLIO
+	**************************************/
+
+	.portfolio-section-title {
+		font-size: 2.25rem;
+	}
+
+	.portfolio-section-description {
+		font-size: 1.125rem;
+	}
+
+	.project-title {
+		font-size: 1.5rem;
+	}
+
+	.project-button {
+		font-size: 13px;
+	}
+
+
+
+	/**************************************
+	SECTION: ABOUT
+	**************************************/
+
+	#about-title {
+		font-size: 4.5rem;
+	}
+
+	#about-text {
+		font-size: 1.125rem;
+		margin-top: 20px;
+	}
+
+	.about-list-title {
+		font-size: 2.25rem;
+		margin-top: 25px;
+	}
+
+	.about-list-item,
+	.contact a {
+		font-size: 1rem;
+	}
+
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+	/**************************************
+	HOMEPAGE
+	**************************************/
+
+	#homepage-title {
+		font-size: 5.75rem;
+	}
+
+	#homepage-subtitle {
+		font-size: 4.5rem;
+	}
+
+	#expand-about {
+		margin-right: 180px;
+	}
+
+	#expand-portfolio {
+		margin-left: 138px;
+	}
+
+
+
+	/**************************************
+	SECTION: PORTFOLIO
+	**************************************/
+
+	.project-title {
+		font-size: 2.25rem;
+		padding: 0 5px;
+	}
+
+
+
+	/**************************************
+	SECTION: ABOUT
+	**************************************/
+
+
+
+}
+
+@media screen and (min-width: 1025px) {
+
+	#homepage-title,
+	#homepage-subtitle {
+		width: 50%;
+		text-align: center;
+		margin: 0;
+	}
+
+	#homepage-title {
+		font-size: 6.75rem;
+	}
+
+	#homepage-subtitle {
+		font-size: 5.5rem;
+	}
+
+	#expand-about,
+	#expand-portfolio {
+		margin: auto;
+	}
+
+	.project-title {
+		font-size: 3rem;
+	}
+
+	.project-button {
+		font-size: 1rem;
+		padding: 4px;
+	}
+}
+
+@media screen and (orientation: portrait) {
+
+	/**************************************
+	HOMEPAGE
+	**************************************/
+
+	.portrait-hidden {
+		display: none;
+	}
+
+	#about-background {
+		background: url("/img/homepage/about-background-portrait.jpg") no-repeat center;
+		background-size: cover;
+	}
+
+	#portfolio-background {
+		background: url("/img/homepage/portfolio-background-portrait.jpg") no-repeat center;
+		background-size: cover;
+	}
+
+	#title-container {
+		flex-direction: column;
+		margin-top: 6vh;
+		background-color: rgb(250,250,250);
+		width: fit-content;
+		padding: 10px;
+		border-radius: 3px;
+	}
+
+	#homepage-subtitle,
+	#homepage-title {
+		margin: auto;
+		color: #000;
+		text-shadow: none;
+	}
+
+	#button-container {
+		flex-direction: column;
+		margin: auto;
+		margin-bottom: 15vh;
+		background-color: rgb(250,250,250);
+		width: 35%;
+		padding: 10px 0;
+		border-radius: 3px;
+	}
+
+	#expand-about,
+	#expand-portfolio {
+		margin: auto;
+		color: #000;
+		text-shadow: none;
+	}
+
+	.button-span {
+		margin: auto;
+		width: fit-content;
+	}
+
+
+
+}
