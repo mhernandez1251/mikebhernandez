@@ -1,0 +1,171 @@
+/*
+Theme Name: example-theme
+Author: Michael Hernandez
+Author URI: localhost
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+a:link,
+a:visited {
+  color: #4E9BCF;
+}
+
+p {
+  line-height: 1.65em;
+}
+
+ul {
+  padding-left: 0;
+}
+
+/* General Layouy*/
+div.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+article .post {
+  border-bottom: 2px dotted #bbb;
+}
+
+article .post:last-of-type {
+  border-bottom: none;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.site-header h1 {
+  margin-bottom: 0;
+}
+
+.site-header h1 a {
+  text-decoration: none;
+}
+
+.site-header h5 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/*Footer */
+.site-footer {
+  margin-top: 30px;
+  border-top: 2px solid #ddd;
+}
+
+.site-footer p {
+  font-size: 10px;
+}
+
+/* Navigation Menus */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav ul li {
+  display: inline-block;
+}
+
+/* Site Header Menu */
+.siteheader nav ul li {
+  margin-right: 5px;
+}
+
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited {
+  display: block;
+  padding: 10px 18px;
+  border: 1px solid #BBB;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.site-header nav ul li a:hover {
+  background-color: #ECECEC;
+}
+
+.site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:visited {
+  background-color: #1080C0;
+  color: #fff;
+}
+
+
+/* Footer Menu */
+.site-footer nav {
+    margin-top: 30px;
+}
+
+.site-footer nav ul li {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px dotted #BBB;
+}
+
+.site-footer nav ul li:last-of-type {
+  border-right: none;
+}
+
+/* Page Layout */
+article.page h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Clearfix */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/*  Two Column Title Layout*/
+
+div.title-column {
+  width: 30%;
+  float: left;
+}
+
+div.text-column {
+  width: 70%;
+  float: right;
+}
+
+/* Info Box Styles */
+div.info-box {
+  width: 30%;
+  float: right;
+  margin: 0 0 30px 30px;
+  padding: 20px;
+  background-color: #DDD;
+}
+
+div.info-box h4 {
+  margin-bottom: 6px;
+}
+
+div.info-box {
+  font-size: 85%;
+  }
+
+/* Children Links*/
+.children-links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: .8rem;
+  display: flex;
+}
+
+.parent-link {
+  margin-right: 20px;
+}
