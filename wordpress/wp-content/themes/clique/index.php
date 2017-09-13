@@ -27,7 +27,6 @@ get_header();
         $post_query = new WP_Query(array('category_name' => 'post-section'));
         if ($post_query->have_posts()):
           $index = 1;
-          $zdex = 20;
         while ($post_query->have_posts()) : $post_query->the_post();
         if ($index < 10) :
           $index = "0" . $index;
@@ -48,11 +47,12 @@ get_header();
       <?php
       wp_reset_postdata();
       $index = 0;
+	  $post_count = wp_count_posts()->publish - 2;
       $post_query = new WP_Query(array('category_name' => 'post-section'));
       while ($post_query->have_posts()) : $post_query->the_post();
       ?>
 
-        <article id="<?php the_title(); ?>" class="section post-section <?php echo $index ?>" style="z-index: <?php echo $zdex; ?>;">
+        <article id="<?php the_title(); ?>" class="section post-section <?php echo $index ?>" style="z-index: <?php echo $post_count; ?>;">
           <div class="post-section-overflay">
           </div>
           <?php wp_count_posts(); ?>
@@ -61,7 +61,7 @@ get_header();
 
       <?php
       $index++;
-      $zdex--;
+      $post_count--;
     endwhile;
       wp_reset_postdata();
       else:
