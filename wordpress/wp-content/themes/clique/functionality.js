@@ -3,6 +3,7 @@
 // scrollspy offsetIndex
 $(document).ready(function(){
     $('body').scrollspy({target: "#post-nav", offset: 200});
+    hover_effect();
 });
 
 // fix post-container-nav when scrolling
@@ -16,8 +17,6 @@ function hide_on_top_bottom(scrollPosition, screenHeight){
     $("#post-nav").removeAttr("style");
   }
 }
-
-
 // position post-nav-line
 function position_nav_line(){
   if($(".post-nav-item").children(".nav-link").hasClass("active")){
@@ -133,91 +132,89 @@ $(document).on("scroll",function(){
   hide_last_fixed(scrollPosition);
   post_img_transition();
   position_nav_line();
-  hide_on_top_bottom(scrollPosition, screenHeight)
-})
-
+  hide_on_top_bottom(scrollPosition, screenHeight);
+});
 
 // HOVER EFFECTS
-
-$(".post-nav-item").hover(function(){
-  var navPosition = $(this).position().top;
-  $(".post-nav-line").css("top",navPosition);
-})
-
-
-// slide down footer talk-to button
-$(".talk-to").hover(function(){
-  $(this).children(".talk-to-down").css("top","0");
-}, function(){
-  $(this).children(".talk-to-down").css("top","-100%")
-})
-
-// all user to view header nav when not on top page
-// prevent header nav from hiding when on top page
-$(".site-header-container").hover(function(){
-  $(".header-nav").css("margin-left", "45px");
-}, function(){
-  var scrollPosition = $(window).scrollTop();
-  if (scrollPosition > 10) {
-    $(".header-nav").css("margin-left", "-100%");
-  }
-})
-
-// footer social media link background/border effect
-$(".social").hover(function(){
-  var hoverBorderClass = $(this).children("a").attr("class") + "hover";
-  $(this).children(".bg-color").toggleClass(hoverBorderClass);
-})
-
-//footer square works links image hover effect
-$(".ad-img-container").hover(function(){
-  $(this).children(".ad-img").css({
-    webkitFilter: 'grayscale(0)',
-    filter: 'grayscale(0)'
+function hover_effect(){
+  $(".post-nav-item").hover(function(){
+    var navPosition = $(this).position().top;
+    $(".post-nav-line").css("top",navPosition);
   });
-  $(this).children(".ad-overlay").css("background", "rgba(255,255,255,0)");
-  $(this).children(".ad-overlay").children(".ad-overlay-link").css("bottom","0");
-},function(){
-  $(this).children(".ad-img").css({
-    webkitFilter: 'grayscale(100%)',
-    filter: 'grayscale(100%)'
+  // slide down footer talk-to button
+  $(".talk-to").hover(function(){
+    $(this).children(".talk-to-down").css("top","0");
+  }, function(){
+    $(this).children(".talk-to-down").css("top","-100%")
   });
-  $(this).children(".ad-overlay").css("background", "rgba(255,255,255,.4)");
-  $(this).children(".ad-overlay").children(".ad-overlay-link").css("bottom", "-50px");
-})
 
-// header nav menu underline functionality
-// will match length and position of hovered menu link
-$(".menu-item a").hover(function(){
-  var width = $(this).width();
-  var position = $(this).position().left;
-  $(".underline").removeClass(".not-hovering");
-  $(".underline").css({
-    'width': width,
-    'left': position
+  // all user to view header nav when not on top page
+  // prevent header nav from hiding when on top page
+  $(".site-header-container").hover(function(){
+    $(".header-nav").css("margin-left", "45px");
+  }, function(){
+    var scrollPosition = $(window).scrollTop();
+    if (scrollPosition > 10) {
+      $(".header-nav").css("margin-left", "-100%");
+    }
   });
-  $(".underline").css("transition-delay", "0s");
-}, function(){
-  $(".underline").css({
-    'width': "41.5px",
-    'left': "0"
+
+  // footer social media link background/border effect
+  $(".social").hover(function(){
+    var hoverBorderClass = $(this).children("a").attr("class") + "hover";
+    $(this).children(".bg-color").toggleClass(hoverBorderClass);
   });
-  $(".underline").css("transition-delay", ".75s");
-})
 
-$(".post-button-container").hover(function(){
-  $(".post-button-down").slideDown("fast");
-}, function(){
-  $(".post-button-down").slideUp("fast");
-})
+  //footer square works links image hover effect
+  $(".ad-img-container").hover(function(){
+    $(this).children(".ad-img").css({
+      webkitFilter: 'grayscale(0)',
+      filter: 'grayscale(0)'
+    });
+    $(this).children(".ad-overlay").css("background", "rgba(255,255,255,0)");
+    $(this).children(".ad-overlay").children(".ad-overlay-link").css("bottom","0");
+  },function(){
+    $(this).children(".ad-img").css({
+      webkitFilter: 'grayscale(100%)',
+      filter: 'grayscale(100%)'
+    });
+    $(this).children(".ad-overlay").css("background", "rgba(255,255,255,.4)");
+    $(this).children(".ad-overlay").children(".ad-overlay-link").css("bottom", "-50px");
+  });
 
-$(".nav-link").on("click",function(){
-  var currentId = $(".active").attr("href");
-  $(".post-section").removeClass("active-section");
-  $(currentId).addClass("active-section");
-  post_img_transition();
-})
+  // header nav menu underline functionality
+  // will match length and position of hovered menu link
+  $(".menu-item a").hover(function(){
+    var width = $(this).width();
+    var position = $(this).position().left;
+    $(".underline").removeClass(".not-hovering");
+    $(".underline").css({
+      'width': width,
+      'left': position
+    });
+    $(".underline").css("transition-delay", "0s");
+  }, function(){
+    $(".underline").css({
+      'width': "41.5px",
+      'left': "0"
+    });
+    $(".underline").css("transition-delay", ".75s");
+  });
 
+  $(".post-button-container").hover(function(){
+    $(".post-button-down").slideDown("fast");
+  }, function(){
+    $(".post-button-down").slideUp("fast");
+  })
+
+  $(".nav-link").on("click",function(){
+    var currentId = $(".active").attr("href");
+    $(".post-section").removeClass("active-section");
+    $(currentId).addClass("active-section");
+    post_img_transition();
+  });
+
+}
 
 // LOADING EFFECTS
 
@@ -228,7 +225,7 @@ $(window).on("load",function(){
   // hide header-nav
   if (scrollPosition > 10) {
     $(".header-nav").css("margin-left", "-100%");
-  }
+  };
 
   // fix post-nav
   if (scrollPosition >= screenHeight) {
@@ -236,7 +233,7 @@ $(window).on("load",function(){
       position: 'fixed',
       top: "7px"
     })
-  }
+  };
 
   // load animation on top page
   $(".see-work-message").css("top", "100%");
@@ -248,17 +245,18 @@ $(window).on("load",function(){
   setTimeout(function(){
     $(".something-text").fadeIn();
     $(".something-text").addClass("normal-letter-spacing");
-  },1500)
+  },1500);
 
   // on load, hide all previous post fixed content
   if ($(".nav-link").hasClass("active")) {
     var activeSection = $(".active").attr("href");
     $(activeSection).prevAll().children(".post-fixed").css("height","0");
-  }
+  };
 
   // see function at top of file
   post_img_transition();
   hide_last_fixed(scrollPosition);
   position_nav_line();
-  hide_on_top_bottom(scrollPosition, screenHeight)
-})
+  hide_on_top_bottom(scrollPosition, screenHeight);
+  hover_effect();
+});

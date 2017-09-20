@@ -52,8 +52,7 @@
     <script>
       var $cart = <?php echo json_encode($_SESSION["cart"]); ?>;
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="camera-shop.js"></script>
+    <script type="text/javascript" src="src/main.min.js"></script>
   </body>
 
 </html>

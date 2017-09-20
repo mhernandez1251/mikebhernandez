@@ -12,7 +12,6 @@ if ($page != "homepage") { ?>
     </div>
   </footer>
 <?php } ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script type="text/javascript" src=<?php echo $javascript_file; ?>></script>
+<script type="text/javascript" src="<?php echo $javascript_file; ?>"></script>
 </body>
 </html>

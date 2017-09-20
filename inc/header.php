@@ -3,22 +3,22 @@
 	if ($page == "homepage") {
 		$main_stylesheet = "css/main.css";
 		$responsive_stylesheet = "css/responsive.css";
-		$javascript_file = "js/functionality.js";
+		$javascript_file = "src/main.min.js";
 	} else if ($page == "Portfolio") {
 		$main_stylesheet = "../css/main.css";
 		$secondary_stylesheet = "portfolio.css";
 		$responsive_stylesheet = "../css/responsive.css";
-		$javascript_file = "../js/functionality.js";
+		$javascript_file = "../src/main.min.js";
 	} else if ($page == "About") {
 		$main_stylesheet = "../css/main.css";
 		$secondary_stylesheet = "about.css";
 		$responsive_stylesheet = "../../css/responsive.css";
-		$javascript_file = "../../js/functionality.js";
+		$javascript_file = "../../src/main.min.js";
 	} else {
 		$main_stylesheet = "../../css/main.css";
 		$secondary_stylesheet = "../portfolio.css";
 		$responsive_stylesheet = "../../css/responsive.css";
-		$javascript_file = "../../js/functionality.js";
+		$javascript_file = "../../src/main.min.js";
 	}
 ?>
 <html>
